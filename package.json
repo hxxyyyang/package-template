@@ -1,10 +1,13 @@
 {
   "name": "package-template",
   "version": "0.0.0",
-  "description": "pacakge template",
+  "description": "package template",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -15,9 +18,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "eslint .",
+    "build": "tsup",
+    "format": "biome check --write ./src",
     "publish:dry": "npm publish --dry-run"
   },
   "devDependencies": {
